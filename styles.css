@@ -4,36 +4,22 @@
    MODERN INTERNATIONAL PORTFOLIO DESIGN
    =================================== */
 
-/* CSS Custom Properties - Clean Black & White Theme */
+/* CSS Custom Properties - Professional Modern Theme */
 :root {
-  /* Allowed Colors Only */
-  --black: #000000;
-  --dark-gray: #111827;
-  --medium-gray: #1f2933;
-  --light-gray: #9ca3af;
-  --very-light-gray: #d1d5db;
-  --white: #ffffff;
-
-  /* Background Colors */
-  --bg-primary: var(--black);           /* Pure black */
-  --bg-secondary: var(--dark-gray);      /* Dark gray */
-  --bg-tertiary: var(--medium-gray);    /* Medium gray */
-
-  /* Text Colors */
-  --text-primary: var(--white);          /* Pure white for headings */
-  --text-secondary: var(--very-light-gray); /* Light gray for normal text */
-  --text-tertiary: var(--light-gray);    /* Gray for muted text */
-
-  /* Border Colors */
-  --border-primary: var(--medium-gray);
-  --border-secondary: var(--dark-gray);
-
-  /* Button Colors */
-  --btn-primary-bg: var(--white);
-  --btn-primary-text: var(--black);
-  --btn-hover-bg: var(--black);
-  --btn-hover-text: var(--white);
-  --btn-hover-border: var(--white);
+  /* Professional Color Palette */
+  --primary: #1a1a1a;           /* Deep charcoal */
+  --secondary: #2d2d2d;         /* Medium charcoal */
+  --accent: #4a9eff;             /* Professional blue accent */
+  --accent-light: #6bb6ff;        /* Light blue accent */
+  --text-primary: #ffffff;          /* Pure white */
+  --text-secondary: #b8c5d6;       /* Light gray */
+  --text-muted: #6b7280;          /* Muted gray */
+  --background: #0f0f0f;          /* Very dark background */
+  --surface: #1e1e1e;             /* Card surface */
+  --border: #2d2d2d;               /* Border color */
+  --success: #10b981;             /* Success green */
+  --warning: #f59e0b;             /* Warning orange */
+  --error: #ef4444;               /* Error red */
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -59,12 +45,13 @@
   --radius-3xl: 2rem;
   --radius-full: 9999px;
 
-  /* Shadows - Dark Theme Friendly */
+  /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
+  --shadow-accent: 0 10px 30px rgba(74, 158, 255, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -116,15 +103,17 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-weight: var(--font-normal);
+  font-weight: 400;
   line-height: 1.6;
   color: var(--text-secondary);
-  background: var(--bg-primary);
+  background: var(--background);
   background-image: none;
   background-attachment: fixed;
   background-size: 100% 100%;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Typography Scale - Clean Black & White */
@@ -380,7 +369,7 @@ section {
   line-height: 1.6;
 }
 
-/* Button System - Black & White Theme */
+/* Button System - Professional Theme */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -388,12 +377,12 @@ section {
   gap: var(--space-xs);
   padding: var(--space-md) var(--space-xl);
   font-family: var(--font-sans);
-  font-weight: var(--font-medium);
+  font-weight: 600;
   font-size: 0.875rem;
   line-height: 1;
-  color: var(--btn-primary-text);
-  background: var(--btn-primary-bg);
-  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+  background: var(--accent);
+  border: 2px solid var(--accent);
   border-radius: var(--radius-lg);
   cursor: pointer;
   text-decoration: none;
@@ -407,7 +396,7 @@ section {
 
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.3);
 }
 
 .btn:active {
@@ -415,11 +404,11 @@ section {
 }
 
 .btn:hover {
-  color: var(--btn-hover-text);
-  background: var(--btn-hover-bg);
-  border-color: var(--btn-hover-border);
+  color: var(--text-primary);
+  background: transparent;
+  border-color: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-accent);
 }
 
 /* Button Sizes */
@@ -438,10 +427,10 @@ section {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
 }
 
-/* Card Components - Black & White Theme */
+/* Card Components - Professional Theme */
 .card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-primary);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: var(--space-3xl);
   box-shadow: var(--shadow-lg);
@@ -458,14 +447,14 @@ section {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--text-primary), transparent);
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
 
 .card:hover {
-  background: var(--bg-tertiary);
-  border-color: var(--text-primary);
+  background: var(--secondary);
+  border-color: var(--accent);
   box-shadow: var(--shadow-xl);
   transform: translateY(-6px);
 }
@@ -791,21 +780,21 @@ section {
   100% { width: 100%; }
 }
 
-/* Navigation - Black & White Theme */
+/* Navigation - Professional Theme */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--bg-primary);
+  background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border);
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: var(--bg-primary);
+  background: rgba(15, 15, 15, 0.98);
   box-shadow: var(--shadow-lg);
 }
 
@@ -2286,15 +2275,15 @@ body::before {
     to { transform: rotate(360deg); }
 }
 
-/* Section Styles */
+/* Section Styles - Professional Theme */
 section {
-    padding: 100px 0;
+    padding: var(--space-4xl) 0;
+    background: var(--background);
     position: relative;
 }
 
 section:nth-child(even) {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: var(--secondary);
 }
 
 .section-title {
@@ -6530,7 +6519,7 @@ section:nth-child(even) {
     font-weight: 600;
 }
 
-/* Hero Section - Black & White Theme */
+/* Hero Section - Professional Theme */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -6538,7 +6527,12 @@ section:nth-child(even) {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: var(--bg-primary);
+    background: var(--background);
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(107, 182, 255, 0.05) 0%, transparent 50%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 .hero-background {
