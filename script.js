@@ -1,5 +1,8 @@
 // Advanced animations and interactions
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme Toggle
+    initThemeToggle();
+    
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     
@@ -22,7 +25,35 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize cursor trail effect
     initCursorTrail();
+    
+    // Animate statistics
+    animateStatistics();
+    
+    // Animate skill bars
+    animateSkillBars();
+    
+    // Initialize forms
+    initForms();
 });
+
+// Theme Toggle
+function initThemeToggle() {
+    const themeSwitch = document.getElementById('theme-switch');
+    const body = document.body;
+    
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.setAttribute('data-theme', savedTheme);
+        themeSwitch.checked = savedTheme === 'dark';
+    }
+    
+    themeSwitch.addEventListener('change', () => {
+        const theme = themeSwitch.checked ? 'dark' : 'light';
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    });
+}
 
 // Create floating particles
 function createParticles() {
@@ -69,7 +100,7 @@ function initScrollReveal() {
                 entry.target.style.transform = 'translateY(0)';
                 
                 // Add stagger effect for multiple elements
-                const elements = entry.target.querySelectorAll('.skill-category, .project-card, .service-card');
+                const elements = entry.target.querySelectorAll('.skill-category, .project-card, .service-card, .testimonial-card, .stat-card, .timeline-item');
                 elements.forEach((el, index) => {
                     setTimeout(() => {
                         el.style.opacity = '1';
@@ -91,7 +122,7 @@ function initScrollReveal() {
 
 // Magnetic button effect
 function initMagneticButtons() {
-    const buttons = document.querySelectorAll('.btn, .social-link');
+    const buttons = document.querySelectorAll('.btn, .social-link, .share-btn');
     
     buttons.forEach(button => {
         button.addEventListener('mousemove', (e) => {
@@ -146,6 +177,182 @@ function initCursorTrail() {
             trail.shift();
         }
     });
+}
+
+// Animate statistics
+function animateStatistics() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = parseInt(target.getAttribute('data-target'));
+                let currentValue = 0;
+                const increment = finalValue / 50;
+                
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= finalValue) {
+                        currentValue = finalValue;
+                        clearInterval(timer);
+                    }
+                    target.textContent = Math.floor(currentValue);
+                }, 30);
+                
+                statsObserver.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => {
+        statsObserver.observe(stat);
+    });
+}
+
+// Animate skill bars
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const skillLevel = bar.getAttribute('data-skill');
+                setTimeout(() => {
+                    bar.style.width = skillLevel + '%';
+                }, 200);
+                skillsObserver.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    skillBars.forEach(bar => {
+        skillsObserver.observe(bar);
+    });
+}
+
+// Initialize forms
+function initForms() {
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Simple validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+
+            // Create mailto link
+            const mailtoLink = `mailto:avij889@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+            )}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showNotification('Opening your email client...', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+    }
+    
+    // Newsletter form
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletter-email').value;
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Show success message
+            showNotification('Thank you for subscribing! Check your email for confirmation.', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+    }
+}
+
+// Notification system
+function showNotification(message, type) {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        color: white;
+        font-weight: 500;
+        z-index: 1001;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    `;
+
+    // Set background color based on type
+    if (type === 'success') {
+        notification.style.background = 'linear-gradient(135deg, var(--success-color), #059669)';
+    } else if (type === 'error') {
+        notification.style.background = 'linear-gradient(135deg, var(--error-color), #dc2626)';
+    }
+
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
 }
 
 // Smooth Scrolling

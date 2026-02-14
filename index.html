@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avinash Jha - Full-Stack & Mobile App Developer</title>
+    <meta name="description" content="Professional Full-Stack & Mobile App Developer with 15+ years of business leadership experience. Building scalable digital solutions for businesses.">
+    <meta name="keywords" content="full-stack developer, mobile app developer, web development, React, Node.js, Python, business solutions">
+    <meta name="author" content="Avinash Jha">
+    <meta property="og:title" content="Avinash Jha - Full-Stack & Mobile App Developer">
+    <meta property="og:description" content="Professional Full-Stack & Mobile App Developer with 15+ years of business leadership experience">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://avinash-jha-portfolio.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@rickyjones544">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-switch">
+        <label for="theme-switch" class="theme-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </label>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -26,7 +44,16 @@
                     <a href="#skills" class="nav-link">Skills</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
                     <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
@@ -127,6 +154,57 @@
         </div>
     </section>
 
+    <!-- Statistics Section -->
+    <section id="statistics" class="statistics">
+        <div class="container">
+            <h2 class="section-title">Achievements in Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="35">0</div>
+                    <div class="stat-label">Team Size</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Client Satisfaction %</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number" data-target="7">0</div>
+                    <div class="stat-label">Days Max Delivery</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Platform Expertise</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -138,13 +216,48 @@
                         <h3>Web Development</h3>
                     </div>
                     <ul class="skill-list">
-                        <li>HTML5</li>
-                        <li>JavaScript (Advanced)</li>
-                        <li>Next.js</li>
-                        <li>React</li>
-                        <li>Firebase</li>
-                        <li>Node.js</li>
-                        <li>REST APIs</li>
+                        <li>
+                            <span class="skill-name">HTML5</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="95"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">JavaScript (Advanced)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="90"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Next.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="88"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Firebase</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="82"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="87"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">REST APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
@@ -154,9 +267,24 @@
                         <h3>Mobile App Development</h3>
                     </div>
                     <ul class="skill-list">
-                        <li>Android Applications</li>
-                        <li>iOS Applications</li>
-                        <li>Cross-platform app development</li>
+                        <li>
+                            <span class="skill-name">Android Applications</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="80"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">iOS Applications</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="75"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Cross-platform development</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
@@ -166,11 +294,36 @@
                         <h3>Data & Analytics</h3>
                     </div>
                     <ul class="skill-list">
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>Power BI</li>
-                        <li>Data Analysis</li>
-                        <li>AI Tools & Automation</li>
+                        <li>
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="92"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="88"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Power BI</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="78"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Data Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">AI Tools & Automation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="83"></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
@@ -180,12 +333,152 @@
                         <h3>Infrastructure & Deployment</h3>
                     </div>
                     <ul class="skill-list">
-                        <li>Linux Server Management</li>
-                        <li>GitHub Version Control</li>
-                        <li>Vercel Deployment</li>
-                        <li>Database Architecture</li>
-                        <li>PostgreSQL (Preferred)</li>
+                        <li>
+                            <span class="skill-name">Linux Server Management</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="82"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">GitHub Version Control</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="90"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Vercel Deployment</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="87"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">Database Architecture</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill-name">PostgreSQL (Preferred)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="88"></div>
+                            </div>
+                        </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Avinash delivered an exceptional eCommerce platform that exceeded our expectations. His attention to detail and business understanding made the project seamless."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Rahul Sharma</h4>
+                                <p>CEO, TechMart Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The loan management website Avinash built transformed our business processes. Professional, reliable, and delivered on time."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Priya Patel</h4>
+                                <p>Director, FinanceHub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Outstanding work on our LMS platform! The Zoom integration and user management features are exactly what we needed."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Amit Kumar</h4>
+                                <p>Founder, English Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - Present</div>
+                        <h3>Full-Stack & Mobile App Developer</h3>
+                        <h4>Freelance & Projects</h4>
+                        <p>Building scalable web and mobile applications for businesses worldwide. Specializing in React, Node.js, and cross-platform mobile development.</p>
+                        <div class="timeline-stats">
+                            <span class="stat">50+ Projects</span>
+                            <span class="stat">100% Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2005 - 2020</div>
+                        <h3>Sales Manager</h3>
+                        <h4>Various Companies</h4>
+                        <p>Led sales teams, managed revenue growth, and developed deep understanding of customer psychology and business needs.</p>
+                        <div class="timeline-stats">
+                            <span class="stat">15+ Years Experience</span>
+                            <span class="stat">35 Team Members Led</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Education & Certifications</div>
+                        <h3>Continuous Learning</h3>
+                        <h4>Professional Development</h4>
+                        <p>MA & BCA degrees, Certified Python Developer, and Certified AI-Driven Professional. Always updating skills with latest technologies.</p>
+                        <div class="timeline-stats">
+                            <span class="stat">MA & BCA</span>
+                            <span class="stat">2 Professional Certifications</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -384,6 +677,42 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Get Latest Updates & Tips</h3>
+                    <p>Subscribe to my newsletter for the latest web development trends, project updates, and exclusive insights.</p>
+                </div>
+                <form id="newsletterForm" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </form>
+                <div class="social-sharing">
+                    <h4>Share My Portfolio</h4>
+                    <div class="share-buttons">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://avinash-jha-portfolio.vercel.app" target="_blank" class="share-btn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://avinash-jha-portfolio.vercel.app&text=Check out this amazing portfolio!" target="_blank" class="share-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://avinash-jha-portfolio.vercel.app" target="_blank" class="share-btn">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="mailto:?subject=Check out this portfolio&body=I thought you might be interested in this portfolio: https://avinash-jha-portfolio.vercel.app" class="share-btn">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
