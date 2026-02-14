@@ -169,8 +169,8 @@ body {
   font-family: var(--font-sans);
   font-weight: var(--font-normal);
   line-height: 1.6;
-  color: var(--text-primary);
-  background: #0a0e1a;
+  color: #1a1a1a;
+  background: #ffffff;
   background-image: none;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -460,7 +460,7 @@ section {
   transform: translateY(1px);
 }
 
-/* Button Variants - Clean & High Contrast */
+/* Button Variants - Clean White Theme */
 .btn-primary {
   background: #0ea5e9;
   color: #ffffff;
@@ -477,31 +477,31 @@ section {
 
 .btn-outline {
   background: transparent;
-  color: #ffffff;
-  border-color: #1e3a4a;
+  color: #1a1a1a;
+  border-color: #e5e5e5;
   border-width: 2px;
   box-shadow: var(--shadow-md);
 }
 
 .btn-outline:hover {
-  background: #1e293b;
-  color: #ffffff;
+  background: #f8f9fa;
+  color: #1a1a1a;
   border-color: #0ea5e9;
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
 
 .btn-ghost {
-  background: #1e293b;
-  color: #cbd5e1;
-  border-color: #1e3a4a;
+  background: #f8f9fa;
+  color: #6b7280;
+  border-color: #e5e5e5;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-ghost:hover {
-  background: #334155;
-  color: #ffffff;
-  border-color: #475569;
+  background: #e9ecef;
+  color: #1a1a1a;
+  border-color: #0ea5e9;
   transform: translateY(-2px);
 }
 
@@ -521,10 +521,10 @@ section {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
 }
 
-/* Card Components - Enhanced Contrast */
+/* Card Components - Clean White Design */
 .card {
-  background: #0f1f2e;
-  border: 1px solid #1e3a4a;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
   border-radius: var(--radius-xl);
   padding: var(--space-3xl);
   box-shadow: var(--shadow-lg);
@@ -547,9 +547,9 @@ section {
 }
 
 .card:hover {
-  background: #1a2f3f;
+  background: #ffffff;
   border-color: var(--primary-500);
-  box-shadow: var(--shadow-xl), var(--shadow-glow);
+  box-shadow: var(--shadow-xl);
   transform: translateY(-6px);
 }
 
@@ -881,14 +881,14 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #0a0e1a;
+  background: #ffffff;
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid #1e3a4a;
+  border-bottom: 1px solid #e5e5e5;
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: #0a0e1a;
+  background: #ffffff;
   box-shadow: var(--shadow-lg);
 }
 
@@ -6613,7 +6613,7 @@ section:nth-child(even) {
     font-weight: 600;
 }
 
-/* World-Class Hero Section - Clean & Focused */
+/* World-Class Hero Section - Clean White Background */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -6621,7 +6621,7 @@ section:nth-child(even) {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #0a0e1a;
+    background: #ffffff;
 }
 
 .hero-background {
