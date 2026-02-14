@@ -1,0 +1,25 @@
+{
+  "name": "avinash-jha-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Avinash Jha - Full-Stack & Mobile App Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack-developer",
+    "mobile-app-developer",
+    "web-development",
+    "react",
+    "nodejs",
+    "python"
+  ],
+  "author": "Avinash Jha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickyjones544-debug"
+  }
+}
