@@ -414,7 +414,7 @@ section {
   font-size: 0.875rem;
   line-height: 1;
   color: var(--white);
-  background: var(--gradient-accent);
+  background: var(--accent);
   border: 2px solid var(--accent);
   border-radius: var(--radius-lg);
   cursor: pointer;
@@ -425,6 +425,7 @@ section {
   white-space: nowrap;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  z-index: 100;
 }
 
 .btn:focus {
@@ -438,7 +439,7 @@ section {
 
 .btn:hover {
   color: var(--white);
-  background: var(--accent);
+  background: var(--primary);
   border-color: var(--accent-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-accent);
