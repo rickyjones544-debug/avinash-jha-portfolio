@@ -1398,6 +1398,30 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.profile-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-full);
+  overflow: hidden;
 }
 
 .profile-container {
@@ -2309,15 +2333,72 @@ body::before {
     to { transform: rotate(360deg); }
 }
 
-/* Section Styles - Professional Theme */
+/* Container and Layout - Better Spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  width: 100%;
+}
+
+/* Section Styles - Better Spacing */
 section {
-    padding: var(--space-4xl) 0;
-    background: var(--background);
-    position: relative;
+  padding: var(--space-4xl) 0;
+  background: var(--bg-primary);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 section:nth-child(even) {
-    background: var(--secondary);
+  background: var(--bg-secondary);
+}
+
+/* Hero Section - Better Layout */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+  width: 100%;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: var(--space-2xl);
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: var(--space-2xl);
 }
 
 .section-title {
