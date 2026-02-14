@@ -945,21 +945,21 @@ section {
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--neutral-800);
+  color: #ffffff;
 }
 
 .brand-title {
   font-size: 0.75rem;
-  color: var(--neutral-500);
+  color: #ffffff;
   font-weight: 500;
 }
 
 [data-theme="dark"] .brand-name {
-  color: var(--neutral-200);
+  color: #ffffff;
 }
 
 [data-theme="dark"] .brand-title {
-  color: var(--neutral-500);
+  color: #ffffff;
 }
 
 .nav-menu {
@@ -973,10 +973,10 @@ section {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.875rem;
-  color: var(--neutral-600);
+  color: #ffffff;
   text-decoration: none;
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   transition: all var(--transition-normal);
   position: relative;
 }
@@ -988,14 +988,14 @@ section {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+  background: linear-gradient(135deg, #10b981, #059669);
   transition: all var(--transition-normal);
   transform: translateX(-50%);
 }
 
 .nav-link:hover {
-  color: var(--primary-600);
-  background: var(--primary-50);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .nav-link:hover::after {
@@ -1003,8 +1003,8 @@ section {
 }
 
 .nav-link.active {
-  color: var(--primary-600);
-  background: var(--primary-50);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .nav-actions {
