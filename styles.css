@@ -30,11 +30,11 @@
   --secondary-800: #155e75;
   --secondary-900: #164e63;
 
-  /* Dark Theme Background Colors */
-  --bg-primary: #0f172a;        /* Dark Navy - Main background */
-  --bg-secondary: #1e293b;      /* Lighter Navy - Card sections */
-  --bg-tertiary: #334155;       /* Even lighter - Hover states */
-  --bg-quaternary: #475569;     /* Lightest - Active states */
+  /* Dark Theme Background Colors - PURE BLACK */
+  --bg-primary: #000000;        /* Pure Black - Main background */
+  --bg-secondary: #1a1a1a;      /* Dark Gray - Card sections */
+  --bg-tertiary: #2a2a2a;       /* Lighter Gray - Hover states */
+  --bg-quaternary: #333333;     /* Lightest - Active states */
 
   /* Text Colors - High Contrast for Maximum Readability */
   --text-primary: #ffffff;        /* Pure white - Maximum contrast */
@@ -121,25 +121,25 @@
   --z-toast: 1080;
 }
 
-/* Light Mode Variables - For Theme Toggle */
+/* Light Mode Variables - BLACK BACKGROUND */
 [data-theme="light"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #f1f5f9;
-  --bg-quaternary: #e2e8f0;
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --bg-quaternary: #333333;
 
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-tertiary: #64748b;
-  --text-quaternary: #94a3b8;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #94a3b8;
+  --text-quaternary: #64748b;
 
-  --border-primary: #e2e8f0;
-  --border-secondary: #cbd5e1;
-  --surface-primary: #ffffff;
-  --surface-secondary: #f8fafc;
+  --border-primary: #333333;
+  --border-secondary: #475569;
+  --surface-primary: #1a1a1a;
+  --surface-secondary: #2a2a2a;
 
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(226, 232, 240, 0.5);
+  --glass-bg: rgba(26, 26, 26, 0.8);
+  --glass-border: rgba(51, 51, 51, 0.5);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -1593,7 +1593,7 @@ section {
 }
 
 .tag-tertiary {
-  background: linear-gradient(135deg, #3776ab, #ffd43b);
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
 }
 
 .tag-quaternary {
@@ -2177,7 +2177,7 @@ body::before {
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -3221,8 +3221,8 @@ section:nth-child(even) {
 }
 
 .type-badge.premium {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  color: var(--neutral-900);
+  background: linear-gradient(135deg, #1a1a1a, #333333);
+  color: #ffffff;
 }
 
 .type-badge.popular {
@@ -3537,7 +3537,7 @@ section:nth-child(even) {
 
 /* Testimonials Section */
 .testimonials {
-    background: var(--bg-light);
+    background: var(--bg-primary);
 }
 
 .testimonials-grid {
@@ -3794,7 +3794,7 @@ section:nth-child(even) {
 
 /* Newsletter Section */
 .newsletter {
-    background: var(--bg-light);
+    background: var(--bg-primary);
 }
 
 .newsletter-content {
