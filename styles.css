@@ -169,8 +169,8 @@ body {
   font-family: var(--font-sans);
   font-weight: var(--font-normal);
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #ffffff;
+  color: #ffffff;
+  background: #000000;
   background-image: none;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -460,7 +460,7 @@ section {
   transform: translateY(1px);
 }
 
-/* Button Variants - Clean White Theme */
+/* Button Variants - Black Theme */
 .btn-primary {
   background: #0ea5e9;
   color: #ffffff;
@@ -477,31 +477,31 @@ section {
 
 .btn-outline {
   background: transparent;
-  color: #1a1a1a;
-  border-color: #e5e5e5;
+  color: #ffffff;
+  border-color: #333333;
   border-width: 2px;
   box-shadow: var(--shadow-md);
 }
 
 .btn-outline:hover {
-  background: #f8f9fa;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  color: #ffffff;
   border-color: #0ea5e9;
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
 
 .btn-ghost {
-  background: #f8f9fa;
-  color: #6b7280;
-  border-color: #e5e5e5;
+  background: #1a1a1a;
+  color: #cccccc;
+  border-color: #333333;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-ghost:hover {
-  background: #e9ecef;
-  color: #1a1a1a;
-  border-color: #0ea5e9;
+  background: #2a2a2a;
+  color: #ffffff;
+  border-color: #555555;
   transform: translateY(-2px);
 }
 
@@ -521,10 +521,10 @@ section {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
 }
 
-/* Card Components - Clean White Design */
+/* Card Components - Black Background */
 .card {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: var(--radius-xl);
   padding: var(--space-3xl);
   box-shadow: var(--shadow-lg);
@@ -547,7 +547,7 @@ section {
 }
 
 .card:hover {
-  background: #ffffff;
+  background: #2a2a2a;
   border-color: var(--primary-500);
   box-shadow: var(--shadow-xl);
   transform: translateY(-6px);
@@ -881,14 +881,14 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: #000000;
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #333333;
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: #ffffff;
+  background: #000000;
   box-shadow: var(--shadow-lg);
 }
 
@@ -6613,7 +6613,7 @@ section:nth-child(even) {
     font-weight: 600;
 }
 
-/* World-Class Hero Section - Clean White Background */
+/* World-Class Hero Section - Black Background */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -6621,7 +6621,7 @@ section:nth-child(even) {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #ffffff;
+    background: #000000;
 }
 
 .hero-background {
