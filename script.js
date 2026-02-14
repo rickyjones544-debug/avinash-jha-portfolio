@@ -425,7 +425,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact Form Handler
+// Enhanced Contact Form Handler
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -433,20 +433,274 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        company: document.getElementById('company').value,
         subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
+        budget: document.getElementById('budget').value,
+        timeline: document.getElementById('timeline').value,
+        message: document.getElementById('message').value,
+        newsletter: document.getElementById('newsletter').checked
     };
 
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-        showNotification('Please fill in all fields', 'error');
+    // Clear previous errors
+    clearValidationErrors();
+
+    // Validate form
+    const validationErrors = validateContactForm(formData);
+    
+    if (validationErrors.length > 0) {
+        showValidationErrors(validationErrors);
         return;
     }
 
+    // Show loading state
+    const submitBtn = document.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+    submitBtn.disabled = true;
+
+    // Simulate form submission (replace with actual form submission)
+    setTimeout(() => {
+        // Success - show success message
+        const formContainer = document.querySelector('.contact-form-container');
+        const form = document.querySelector('.contact-form');
+        const successMessage = document.querySelector('.form-success');
+        
+        form.style.display = 'none';
+        successMessage.style.display = 'flex';
+        
+        // Reset form
+        this.reset();
+        
+        // Show notification
+        showNotification('Message sent successfully! I\'ll get back to you within 2 hours.', 'success');
+        
+        // Scroll to success message
+        formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+    }, 2000);
+});
+
+// Form Validation Functions
+function validateContactForm(data) {
+    const errors = [];
+    
+    // Name validation
+    if (!data.name || data.name.trim().length < 2) {
+        errors.push({ field: 'name', message: 'Name must be at least 2 characters long' });
+    }
+    
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!data.email || !emailRegex.test(data.email)) {
+        errors.push({ field: 'email', message: 'Please enter a valid email address' });
+    }
+    
+    // Phone validation (optional but if provided, should be valid)
+    if (data.phone && data.phone.trim()) {
+        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+        if (!phoneRegex.test(data.phone)) {
+            errors.push({ field: 'phone', message: 'Please enter a valid phone number' });
+        }
+    }
+    
+    // Subject validation
+    if (!data.subject || data.subject === '') {
+        errors.push({ field: 'subject', message: 'Please select a subject' });
+    }
+    
+    // Message validation
+    if (!data.message || data.message.trim().length < 10) {
+        errors.push({ field: 'message', message: 'Message must be at least 10 characters long' });
+    }
+    
+    return errors;
+}
+
+function showValidationErrors(errors) {
+    errors.forEach(error => {
+        const input = document.getElementById(error.field);
+        const errorElement = input.parentElement.querySelector('.input-error');
+        
+        input.classList.add('error');
+        errorElement.textContent = error.message;
+        errorElement.classList.add('show');
+    });
+    
+    // Focus on first error
+    if (errors.length > 0) {
+        document.getElementById(errors[0].field).focus();
+    }
+}
+
+function clearValidationErrors() {
+    const inputs = document.querySelectorAll('.form-input');
+    inputs.forEach(input => {
+        input.classList.remove('error');
+        const errorElement = input.parentElement.querySelector('.input-error');
+        if (errorElement) {
+            errorElement.classList.remove('show');
+        }
+    });
+}
+
+// New Message Button Handler
+document.querySelector('.new-message-btn')?.addEventListener('click', function() {
+    const form = document.querySelector('.contact-form');
+    const successMessage = document.querySelector('.form-success');
+    
+    form.style.display = 'flex';
+    successMessage.style.display = 'none';
+    
+    // Focus on first input
+    document.getElementById('name').focus();
+});
+
+// Real-time validation
+document.getElementById('name')?.addEventListener('blur', function() {
+    validateField(this, 'name');
+});
+
+document.getElementById('email')?.addEventListener('blur', function() {
+    validateField(this, 'email');
+});
+
+document.getElementById('phone')?.addEventListener('blur', function() {
+    validateField(this, 'phone');
+});
+
+document.getElementById('subject')?.addEventListener('change', function() {
+    validateField(this, 'subject');
+});
+
+document.getElementById('message')?.addEventListener('blur', function() {
+    validateField(this, 'message');
+});
+
+function validateField(input, fieldName) {
+    const value = input.value.trim();
+    const errorElement = input.parentElement.querySelector('.input-error');
+    
+    // Clear previous error
+    input.classList.remove('error');
+    errorElement.classList.remove('show');
+    
+    let error = null;
+    
+    switch(fieldName) {
+        case 'name':
+            if (value.length < 2) {
+                error = 'Name must be at least 2 characters long';
+            }
+            break;
+        case 'email':
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                error = 'Please enter a valid email address';
+            }
+            break;
+        case 'phone':
+            if (value && !/^[\d\s\-\+\(\)]+$/.test(value)) {
+                error = 'Please enter a valid phone number';
+            }
+            break;
+        case 'subject':
+            if (!value) {
+                error = 'Please select a subject';
+            }
+            break;
+        case 'message':
+            if (value.length < 10) {
+                error = 'Message must be at least 10 characters long';
+            }
+            break;
+    }
+    
+    if (error) {
+        input.classList.add('error');
+        errorElement.textContent = error;
+        errorElement.classList.add('show');
+    }
+}
+
+// Auto-format phone number
+document.getElementById('phone')?.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    // Format phone number (basic formatting)
+    if (value.length > 0) {
+        if (value.length <= 3) {
+            value = value;
+        } else if (value.length <= 6) {
+            value = value.slice(0, 3) + '-' + value.slice(3);
+        } else {
+            value = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+        }
+    }
+    
+    e.target.value = value;
+});
+
+// Character counter for message
+document.getElementById('message')?.addEventListener('input', function(e) {
+    const charCount = e.target.value.length;
+    const maxLength = 500;
+    
+    // You could add a character counter display here if needed
+    if (charCount > maxLength) {
+        e.target.value = e.target.value.substring(0, maxLength);
+    }
+});
+
+// Quick Contact Button Analytics
+document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        const platform = this.classList.contains('whatsapp-btn') ? 'WhatsApp' :
+                       this.classList.contains('email-btn') ? 'Email' :
+                       this.classList.contains('linkedin-btn') ? 'LinkedIn' : 'GitHub';
+        
+        // Track contact method (you could add analytics here)
+        console.log(`Contact via ${platform}`);
+    });
+});
+
+// Form field focus effects
+document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+    });
+    
+    input.addEventListener('blur', function() {
+        this.parentElement.classList.remove('focused');
+    });
+});
+
+// Newsletter Form Handler
+document.getElementById('newsletterForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('newsletter-email').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!email || !emailRegex.test(email)) {
         showNotification('Please enter a valid email address', 'error');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Subscribing...';
+    submitBtn.disabled = true;
+    
+    // Simulate subscription
+    setTimeout(() => {
+        showNotification('Successfully subscribed to newsletter!', 'success');
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 1500);
+});
         return;
     }
 
