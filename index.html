@@ -1,448 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avinash Jha Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avinash Jha | Portfolio</title>
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#0b0b0b;
-    color:white;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 60px;
-    background:black;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:bold;
-}
-
-nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
-    align-items:center;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-}
-
-.contact-btn{
-    background:#e5e5e5;
-    color:black;
-    padding:10px 20px;
-    border-radius:6px;
-    font-weight:bold;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:80px 60px;
-    min-height:90vh;
-}
-
-.hero-left{
-    max-width:600px;
-}
-
-.hero-left h1{
-    font-size:64px;
-    line-height:1.15;
-    margin-bottom:25px;
-}
-
-.hero-left p{
-    color:#cfcfcf;
-    margin-bottom:30px;
-    font-size:18px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:15px;
-}
-
-.btn{
-    background:#e5e5e5;
-    color:black;
-    padding:14px 24px;
-    border-radius:8px;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* profile image */
-
-.hero-right{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero-right img{
-    width:420px;
-    height:420px;
-    object-fit:cover;
-    border-radius:50%;
-    border:10px solid #2f6df6;
-}
-
-/* ================= SERVICES ================= */
-
-.services{
-    background:#f2f2f2;
-    color:black;
-    padding:80px 60px;
-    text-align:center;
-}
-
-.services h2{
-    font-size:36px;
-    margin-bottom:40px;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
-
-.service-card{
-    background:#e9e9e9;
-    padding:35px 25px;
-    border-radius:12px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.08);
-}
-
-.service-card h3{
-    margin-bottom:10px;
-}
-
-/* ================= ABOUT ================= */
-
-.about{
-    background:#efefef;
-    color:black;
-    padding:70px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.about-text{
-    max-width:650px;
-}
-
-.stats{
-    display:flex;
-    gap:60px;
-}
-
-.stat{
-    text-align:center;
-}
-
-.stat h3{
-    font-size:42px;
-}
-
-/* ================= PROJECTS ================= */
-
-.projects{
-    padding:80px 60px;
-    text-align:center;
-}
-
-.projects h2{
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-    margin-top:40px;
-}
-
-.project-card{
-    background:#111;
-    padding:30px;
-    border-radius:14px;
-    text-align:left;
-}
-
-.project-card p{
-    color:#cfcfcf;
-    margin:15px 0;
-}
-
-.project-buttons{
-    display:flex;
-    gap:12px;
-    margin-top:15px;
-}
-
-.project-buttons a{
-    background:#e5e5e5;
-    color:black;
-    padding:10px 18px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-    text-align:center;
-    padding:80px 20px;
-}
-
-.contact h2{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:black;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:1000px){
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-right{
-    margin-top:40px;
-}
-
-.service-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.project-grid{
-    grid-template-columns:1fr;
-}
-
-.about{
-    flex-direction:column;
-    gap:30px;
-    text-align:center;
-}
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav">
+            <h2>Avinash Jha</h2>
 
-<nav>
-<div class="logo">Avinash Jha</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact" class="btn">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Pricing</a></li>
-<li><a class="contact-btn" href="#">Contact</a></li>
-</ul>
-</nav>
 
-<!-- HERO -->
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-<section class="hero">
+        <div class="hero-left">
 
-<div class="hero-left">
-<h1>
-Hi, I'm Avinash 👋 <br>
-I Build Clean, Fast & <br>
-Professional Websites
-</h1>
+            <h1>Hi, I'm Avinash 👋<br>
+                I Build Clean, Fast &<br>
+                Professional Websites</h1>
 
-<p>
-Web Developer | UI Designer | Tech Learner<br>
-Helping businesses grow with modern websites.
-</p>
+            <p>
+                Web Developer | UI Designer | Tech Learner<br>
+                Helping businesses grow with modern websites.
+            </p>
 
-<div class="hero-buttons">
-<a class="btn" href="#">View My Work</a>
-<a class="btn" href="#">Hire Me</a>
-</div>
+            <div class="hero-btn">
+                <a href="#projects">View My Work</a>
+                <a href="#contact">Hire Me</a>
+                <a href="assets/resume/Avinash_Jha_Resume.pdf.pdf" target="_blank" class="btn-primary" download>
+                    Download Resume
+                </a>
+            </div>
 
-</div>
+        </div>
 
-<div class="hero-right">
-<img src="images\profilepic.jpg" alt="profile">
-</div>
+        <div class="hero-right">
+            <img src="images/profile.jpg" alt="Avinash">
+        </div>
 
-</section>
+    </section>
 
-<!-- SERVICES -->
 
-<section class="services">
+    <!-- SERVICES -->
+    <section class="white" id="services">
 
-<h2>Our Services</h2>
+        <h2>Our Services</h2>
 
-<div class="service-grid">
+        <div class="grid">
 
-<div class="service-card">
-<h3>Website Development</h3>
-<p>Modern, fast, and responsive websites.</p>
-</div>
+            <div class="card">
+                <h3>Website Development</h3>
+                <p>Modern, fast, responsive websites.</p>
+            </div>
 
-<div class="service-card">
-<h3>Web Applications</h3>
-<p>Custom business applications.</p>
-</div>
+            <div class="card">
+                <h3>Web Applications</h3>
+                <p>Custom business applications.</p>
+            </div>
 
-<div class="service-card">
-<h3>Mobile Apps</h3>
-<p>Android & iOS app solutions.</p>
-</div>
+            <div class="card">
+                <h3>Mobile Apps</h3>
+                <p>Android & iOS solutions.</p>
+            </div>
 
-<div class="service-card">
-<h3>SEO & Marketing</h3>
-<p>Rank higher and get more customers.</p>
-</div>
+            <div class="card">
+                <h3>SEO & Marketing</h3>
+                <p>Rank higher and get customers.</p>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ABOUT -->
 
-<section class="about">
+    <!-- ================= ABOUT ================= -->
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about-center">
 
-<div class="about-text">
-<h2>About Us</h2>
-<p>
-We are a startup-focused development team providing affordable
-and reliable digital solutions in India and Nepal.
-Our mission is to help small businesses grow online.
-</p>
-</div>
+        <div class="about-box">
 
-<div class="stats">
+            <h2>About Me</h2>
 
-<div class="stat">
-<h3>50+</h3>
-<p>Projects</p>
-</div>
+            <p>
+                I help startups and small businesses build professional websites
+                and applications at affordable prices. My focus is on quality,
+                transparency, and long-term support.
+            </p>
 
-<div class="stat">
-<h3>30+</h3>
-<p>Clients</p>
-</div>
+            <h3>My Mission</h3>
 
-<div class="stat">
-<h3>3+</h3>
-<p>Years</p>
-</div>
+            <p>
+                I come from a small city in Bihar, where many local businesses
+                still struggle to access modern technology.
+            </p>
 
-</div>
+            <p>
+                I have personally seen shop owners, startups, and entrepreneurs
+                wanting websites and apps but being unable to afford high
+                development costs.
+            </p>
 
-</section>
+            <p>
+                That experience shaped my mission.
+            </p>
 
-<!-- PROJECTS -->
+            <p>
+                My goal is to make professional digital solutions affordable and
+                accessible for small businesses and startups worldwide.
+            </p>
 
-<section class="projects">
+            <p>
+                I offer flexible pricing and installment-based payments so
+                founders can grow first and pay comfortably later.
+            </p>
 
-<h2>My Projects</h2>
-<p>Real-world projects showcasing my skills and experience.</p>
+            <p>
+                I believe technology should empower businesses, not burden them
+                with heavy costs.
+            </p>
 
-<div class="project-grid">
+            <p>
+                When my clients grow, I grow with them.
+            </p>
 
-<div class="project-card">
-<h3>Personal Portfolio Website</h3>
-<p>A responsive portfolio website.</p>
-<p>Tech: HTML, CSS, JavaScript</p>
+        </div>
 
-<div class="project-buttons">
-<a href="#">GitHub</a>
-<a href="#">Live Demo</a>
-</div>
-</div>
+    </section>
 
-<div class="project-card">
-<h3>Satyam Foundation Website</h3>
-<p>Official website for social foundation.</p>
-<p>Tech: HTML, CSS, JavaScript</p>
+    </section>
 
-<div class="project-buttons">
-<a href="#">GitHub</a>
-<a href="#">Live Demo</a>
-</div>
-</div>
+    <!-- SKILLS -->
+    <section class="dark">
 
-<div class="project-card">
-<h3>English Coaching LMS</h3>
-<p>Learning management system.</p>
-<p>Tech: HTML, CSS, JavaScript</p>
+        <h2>Technical Skills</h2>
+        <p>My core technologies</p>
 
-<div class="project-buttons">
-<a href="#">GitHub</a>
-<a href="#">Live Demo</a>
-</div>
-</div>
+        <div class="skills">
 
-</div>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Node.js</span>
 
-</section>
+            <span>Express.js</span>
+            <span>Database</span>
+            <span>Git & GitHub</span>
+            <span>Linux</span>
+            <span>CRM</span>
+            <span>Power BI</span>
 
-<!-- CONTACT -->
+            <span>Ethical Hacking</span>
+            <span>Cybersecurity</span>
+            <span>Hosting</span>
+            <span>Vercel</span>
+            <span>Responsive</span>
+            <span>SEO</span>
 
-<section class="contact">
+        </div>
 
-<h2>Let's Work Together</h2>
-<p>Email: avij889@gmail.com</p>
-<p>Phone: +91-7434971060</p>
+    </section>
 
-<br>
 
-<a class="btn" href="#">Send Message</a>
+    <!-- PROJECTS -->
+    <section class="dark" id="projects">
 
-</section>
+        <h2>My Projects</h2>
+        <p>Real-world projects</p>
 
-<footer>
-© 2026 Avinash Jha. All Rights Reserved.
-</footer>
+        <div class="projects">
+
+            <div class="p-card">
+                <h3>Personal Portfolio</h3>
+                <p>Responsive portfolio website.</p>
+                <p>Tech: HTML, CSS, JS</p>
+
+                <div class="p-btn">
+                    <a href="https://github.com/rickyjones544-debug/avinash-jha-portfolio">GitHub</a>
+                    <a href="https://avinash-jha-portfolio.vercel.app/">Live</a>
+                </div>
+            </div>
+
+
+            <div class="p-card">
+                <h3>Satyam Foundation</h3>
+                <p>Social foundation website.</p>
+                <p>Tech: HTML, CSS, JS</p>
+
+                <div class="p-btn">
+                    <a href="https://github.com/rickyjones544-debug/satyam-foundation-website">GitHub</a>
+                    <a href="https://satyam-foundation-mushrooms.vercel.app/">Live Demo</a>
+                </div>
+            </div>
+
+
+            <div class="p-card">
+                <h3>English LMS</h3>
+                <p>Learning Management System.</p>
+                <p>Tech: HTML, CSS, JS</p>
+
+                <div class="p-btn">
+                    <a href="https://github.com/rickyjones544-debug/English-Coaching-LMS">GitHub</a>
+                    <a href="https://ideal-education-by-ashutosh-sir.vercel.app/">Live Demo</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+    <section class="white" id="pricing">
+
+        <h2>Affordable Pricing</h2>
+
+        <div class="price">
+
+            <h3>Starter Business Package</h3>
+
+            <h1>₹12,000 / NPR Equivalent</h1>
+
+            <p>Perfect for startups</p>
+
+            <ul>
+                <li>✔ Website / App</li>
+                <li>✔ Mobile Responsive</li>
+                <li>✔ SEO Ready</li>
+                <li>✔ Free Support</li>
+                <li>✔ Hosting Help</li>
+            </ul>
+
+            <p>30% Advance • 40% Delivery • 30% Later</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact-section">
+
+        <div class="contact-container">
+
+            <h2>Contact Me</h2>
+
+            <p class="contact-text">
+                Have a project in mind? Let’s talk and build something amazing together.
+            </p>
+
+            <p class="contact-number">
+                📞 Call Us At: <strong>+91 74349 71060</strong>
+            </p>
+
+            <div class="contact-box">
+
+                <!-- CALL -->
+                <div class="contact-card">
+                    <h3>Call Me</h3>
+                    <p>Speak directly with me</p>
+
+                    <a href="tel:+917434971060" class="contact-btn call">
+                        Call Now
+                    </a>
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="contact-card">
+                    <h3>Email Me</h3>
+                    <p>Send your project details</p>
+
+                    <a href="mailto:avij889@gmail.com" class="contact-btn email">
+                        Send Email
+                    </a>
+                </div>
+
+
+                <!-- WHATSAPP -->
+                <div class="contact-card">
+                    <h3>WhatsApp</h3>
+                    <p>Chat instantly with me</p>
+
+                    <a href="https://wa.me/917434971060" target="_blank" class="contact-btn whatsapp">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Avinash Jha. All Rights Reserved.</p>
+    </footer>
 
 </body>
+
 </html>
