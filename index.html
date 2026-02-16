@@ -199,6 +199,22 @@
 
         <div class="hero-right">
             <img src="images/profile.jpg" alt="Avinash">
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="white" id="services">
+
+        <h2>Our Services</h2>
+        <p>Professional solutions tailored for your business growth</p>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <div class="service-content">
                     <h3>Website Development</h3>
                     <p>Modern, fast, responsive websites that convert visitors into customers and drive business growth.</p>
                     <ul class="service-features">
@@ -704,21 +720,36 @@
 <script>
 // Smooth scrolling function
 function scrollToSection(sectionId) {
+    console.log('Scrolling to section:', sectionId);
     const targetSection = document.querySelector('#' + sectionId);
     if (targetSection) {
+        console.log('Section found:', targetSection);
         targetSection.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
+    } else {
+        console.log('Section not found:', sectionId);
     }
 }
 
-// Smooth scrolling for navigation links
+// Enhanced smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
+        console.log('Navigation link clicked:', targetId);
         scrollToSection(targetId);
+        
+        // Close mobile menu if open
+        const navMenu = document.getElementById('navMenu');
+        const mobileToggle = document.getElementById('mobileMenuToggle');
+        if (navMenu && navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+            if (mobileToggle) {
+                mobileToggle.classList.remove('active');
+            }
+        }
     });
 });
 
@@ -762,6 +793,8 @@ function toggleMobileMenu() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing...');
+    
     // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileMenuToggle');
     if (mobileToggle) {
@@ -773,6 +806,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initial update
     updateActiveNavLink();
+    
+    // Test button functionality
+    console.log('Testing button functionality...');
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    buttons.forEach(button => {
+        console.log('Button found:', button.textContent, button.href);
+    });
 });
 
 // Close mobile menu when clicking outside
@@ -784,6 +824,17 @@ document.addEventListener('click', function(e) {
         !navMenu.contains(e.target) && 
         !mobileToggle.contains(e.target)) {
         navMenu.style.display = 'none';
+        mobileToggle.classList.remove('active');
+    }
+});
+
+// Handle window resize for mobile menu
+window.addEventListener('resize', function() {
+    const navMenu = document.getElementById('navMenu');
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    
+    if (window.innerWidth > 768) {
+        navMenu.style.display = '';
         mobileToggle.classList.remove('active');
     }
 });
