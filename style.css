@@ -69,6 +69,45 @@ section::before {
     background: linear-gradient(90deg, transparent, #555, transparent);
 }
 
+/* ENHANCED BLACK & WHITE THEME */
+
+.white {
+    background: #ffffff;
+    color: #000000;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.white h2 {
+    color: #000000;
+    margin-bottom: 60px;
+}
+
+.white p {
+    color: #333333;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dark {
+    background: #0f0f0f;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.dark h2 {
+    color: #ffffff;
+    margin-bottom: 60px;
+}
+
+.dark p {
+    color: #e0e0e0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* NAV */
 
 header {
@@ -297,7 +336,7 @@ header {
     align-items: center;
     margin-bottom: 10px;
     font-size: 14px;
-    color: #555;
+    color: #444444;
 }
 
 .service-features li::before {
@@ -318,14 +357,15 @@ header {
 }
 
 .pricing-card {
-    background: white;
+    background: #ffffff;
     padding: 0;
     border-radius: 20px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #e8e8e8;
     text-align: center;
     position: relative;
     transition: all 0.3s ease;
     overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
 }
 
 .pricing-card.premium {
@@ -360,7 +400,7 @@ header {
 .pricing-info h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #333;
+    color: #000000;
     font-weight: 600;
 }
 
@@ -418,7 +458,7 @@ header {
 .feature-group h4 {
     font-size: 16px;
     margin-bottom: 15px;
-    color: #333;
+    color: #000000;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -435,7 +475,7 @@ header {
     align-items: center;
     margin-bottom: 12px;
     font-size: 14px;
-    color: #555;
+    color: #444444;
 }
 
 .feature-group li::before {
@@ -497,7 +537,7 @@ header {
 
 .pricing-cta-btn {
     background: #2979ff;
-    color: white;
+    color: #ffffff;
     padding: 16px 32px;
     border-radius: 10px;
     text-decoration: none;
@@ -505,12 +545,13 @@ header {
     font-size: 16px;
     transition: all 0.3s ease;
     display: inline-block;
+    box-shadow: 0 6px 20px rgba(41, 121, 255, 0.2);
 }
 
 .pricing-cta-btn:hover {
     background: #1d6fd8;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(41, 121, 255, 0.3);
+    box-shadow: 0 12px 30px rgba(41, 121, 255, 0.4);
 }
 
 /* MOBILE */
