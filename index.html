@@ -157,17 +157,20 @@
     <header>
         <div class="nav">
             <h2>Avinash Jha</h2>
-
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact" class="btn">Contact</a></li>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#contact" class="btn nav-link">Contact</a></li>
             </ul>
         </div>
     </header>
-
 
     <!-- HERO -->
     <section class="hero" id="home">
@@ -649,9 +652,94 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Avinash Jha. All Rights Reserved.</p>
+        <p> 2026 Avinash Jha. All Rights Reserved.</p>
     </footer>
 
 </body>
+
+<!-- JAVASCRIPT FOR NAVIGATION AND SMOOTH SCROLLING -->
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Active section highlighting on scroll
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSection = '';
+    
+    // Find current section
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section.id;
+        }
+    });
+    
+    // Update active nav link
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    
+    if (navMenu.style.display === 'flex') {
+        navMenu.style.display = 'none';
+        mobileToggle.classList.remove('active');
+    } else {
+        navMenu.style.display = 'flex';
+        mobileToggle.classList.add('active');
+    }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Active section highlighting
+    window.addEventListener('scroll', updateActiveNavLink);
+    
+    // Initial update
+    updateActiveNavLink();
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const navMenu = document.getElementById('navMenu');
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    
+    if (navMenu && mobileToggle && 
+        !navMenu.contains(e.target) && 
+        !mobileToggle.contains(e.target)) {
+        navMenu.style.display = 'none';
+        mobileToggle.classList.remove('active');
+    }
+});
+</script>
 
 </html>
