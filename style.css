@@ -2720,4 +2720,77 @@ section[id="case-studies"] {
   padding-top: 100px !important;
   padding-bottom: 80px !important;
   position: relative !important;
+  display: block !important;
+  visibility: visible !important;
+  z-index: 1 !important;
+}
+
+/* PROJECTS SECTION SPECIFIC */
+.projects {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+  position: relative !important;
+  display: block !important;
+  visibility: visible !important;
+  z-index: 1 !important;
+}
+
+/* CASE STUDY CARDS */
+.case-study-card {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* PROJECT IMAGES */
+.project-image-container {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.project-image {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* REMOVE ANY BLUE TEXT OR OVERLAYS */
+.projects * {
+  color: inherit !important;
+}
+
+.case-study-card * {
+  color: inherit !important;
+}
+
+.project-image-container * {
+  color: inherit !important;
+}
+
+/* ENSURE CONTENT IS VISIBLE */
+section#projects h2,
+section#projects p,
+section#projects .case-study-card,
+section#projects .project-image-container,
+section#projects .project-image {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
 }
