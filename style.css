@@ -2915,6 +2915,8 @@ section#projects .btn-link {
   align-items: center !important;
   gap: 5px !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  border: 1px solid #ddd !important;
+  cursor: pointer !important;
 }
 
 .btn-link:hover {
@@ -2923,4 +2925,73 @@ section#projects .btn-link {
   background: #f0f0f0 !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* UNIVERSAL BUTTON FIX - TARGET ALL POSSIBLE BUTTONS */
+a[href*="github.com"],
+a[href*="vercel.app"],
+a[href*="github"],
+a[href*="demo"],
+a[href*="live"],
+a:has(span:contains("View Code")),
+a:has(span:contains("Live Demo")) {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  position: relative !important;
+  z-index: 10 !important;
+  color: black !important;
+  background: white !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  align-items: center !important;
+  gap: 5px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  border: 1px solid #ddd !important;
+  cursor: pointer !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* FORCE ALL LINKS IN PROJECT ACTIONS */
+.project-actions a,
+.case-study-card a,
+.projects a {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  position: relative !important;
+  z-index: 10 !important;
+  color: black !important;
+  background: white !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  align-items: center !important;
+  gap: 5px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  border: 1px solid #ddd !important;
+  cursor: pointer !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* REMOVE ANY MARKDOWN STYLING */
+.projects a[href],
+.project-actions a[href] {
+  color: black !important;
+  text-decoration: none !important;
+  background: white !important;
+  border: 1px solid #ddd !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
 }
