@@ -635,81 +635,175 @@
     </section>
 
     <!-- PRICING -->
-    <section class="white" id="pricing">
-
-        <h2>Affordable Pricing Plans</h2>
-        <p>Premium solutions at startup-friendly rates with flexible payment options</p>
-
-        <div class="pricing-grid">
-
-            <div class="pricing-card premium">
-                <div class="pricing-header">
-                    <div class="pricing-icon">🚀</div>
-                    <div class="pricing-info">
-                        <h3>Starter Business Package</h3>
-                        <div class="price-tag">
-                            <span class="currency">Starting from</span>
-                            <span class="amount">₹12,000</span>
-                            <span class="usd">/$150+</span>
-                        </div>
-                        <div class="pricing-badge">
-                            <span class="badge popular">Most Popular</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pricing-features">
-                    <div class="feature-group">
-                        <h4>🌟 Core Features</h4>
-                        <ul>
-                            <li>✓ Professional Website / App</li>
-                            <li>✓ Mobile Responsive Design</li>
-                            <li>✓ SEO Optimization</li>
-                            <li>✓ 30 Days Free Support</li>
-                            <li>✓ Hosting & Deployment Help</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-group">
-                        <h4>💳 Payment Flexibility</h4>
-                        <ul>
-                            <li>✓ 30% Advance</li>
-                            <li>✓ 40% on Delivery</li>
-                            <li>✓ 30% in 60 Days</li>
-                            <li>✓ Installment Options Available</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-group">
-                        <h4>🌱 Startup-Friendly</h4>
-                        <ul>
-                            <li>✓ Affordable for Startups</li>
-                            <li>✓ No Hidden Costs</li>
-                            <li>✓ Grow First, Pay Later</li>
-                            <li>✓ Transparent Pricing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="price-comparison">
-                    <h4>� Value Proposition</h4>
-                    <div class="comparison-item">
-                        <span class="original">₹25,000+</span>
-                        <span class="arrow">→</span>
-                        <span class="discount">Your Price: ₹12,000</span>
-                    </div>
-                </div>
-
-                <div class="cta-section">
-                    <h4>🎯 Ready to Start?</h4>
-                    <p>Perfect for startups and small businesses looking to establish professional online presence</p>
-                    <a href="#contact" class="pricing-cta-btn">Get Started Today</a>
+    <section class="pricing-saas" id="pricing">
+        <div class="pricing-container">
+            <div class="pricing-header">
+                <h2>Affordable Pricing Plans</h2>
+                <p>Premium solutions at startup-friendly rates with flexible payment options</p>
             </div>
 
-            <div class="why-me-card">
-                <div class="why-me-icon">📞</div>
-                <div class="why-me-content">
-                    <p>Clear, honest communication throughout your project journey. Regular updates, no hidden costs, and complete transparency in all dealings. You'll always know exactly what's happening with your project.</p>
+            <div class="pricing-cards">
+                <!-- Launch Plan -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Launch</h3>
+                        <span class="plan-badge">Basic</span>
+                    </div>
+                    
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">7,999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">For Individuals & Small Businesses</p>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>3–5 Page Website</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>WhatsApp Integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Basic SEO</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Contact Form</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>1 Month Support</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="primary-btn" onclick="scrollToSection('contact')">Get Started</button>
+                        <button class="secondary-btn" onclick="window.open('https://wa.me/917434971060', '_blank')">WhatsApp</button>
+                        <button class="secondary-btn" onclick="window.open('tel:+917434971060', '_blank')">Call</button>
+                    </div>
+                </div>
+
+                <!-- Scale Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="card-header">
+                        <h3>Scale</h3>
+                        <span class="plan-badge popular">Popular</span>
+                    </div>
+                    
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">14,999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">For Growing Businesses</p>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Everything in Launch</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>10–15 Page Website</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Advanced SEO & Analytics</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Database Integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Payment Gateway</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>3 Months Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Performance Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="primary-btn" onclick="scrollToSection('contact')">Choose Plan</button>
+                        <button class="secondary-btn" onclick="window.open('https://wa.me/917434971060', '_blank')">WhatsApp</button>
+                        <button class="secondary-btn" onclick="window.open('tel:+917434971060', '_blank')">Call</button>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Enterprise</h3>
+                        <span class="plan-badge">Custom</span>
+                    </div>
+                    
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="currency">Custom</span>
+                            <span class="amount">Pricing</span>
+                        </div>
+                        <p class="plan-description">For Companies & Enterprises</p>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Everything in Scale</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Unlimited Pages</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Custom Web Applications</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>API Integration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Cloud Hosting & CDN</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Advanced Security</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Priority Support (24/7)</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Dedicated Account Manager</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="primary-btn" onclick="scrollToSection('contact')">Explore</button>
+                        <button class="secondary-btn" onclick="window.open('https://wa.me/917434971060', '_blank')">WhatsApp</button>
+                        <button class="secondary-btn" onclick="window.open('tel:+917434971060', '_blank')">Call</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
