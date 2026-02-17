@@ -2379,4 +2379,8 @@ footer {
   .pricing-grid {
     grid-template-columns: 1fr;
   }
+  .pricing-card {
+    min-height: auto;
+    padding: 35px 25px;
+  }
 }
