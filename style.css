@@ -2240,6 +2240,143 @@ footer {
         margin-bottom: 15px;
     }
 
-}/ /   R e s u m e   d e p l o y m e n t   f i x 
- 
- 
+}
+
+/* PRICING SECTION */
+
+.pricing-section {
+  background: linear-gradient(135deg, #050505, #0f0c29);
+  padding: 80px 20px;
+  color: #fff;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+  color: #aaa;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+
+.pricing-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 0 20px rgba(128, 90, 213, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(128, 90, 213, 0.6);
+}
+
+/* POPULAR */
+
+.pricing-card.popular {
+  border: 2px solid #7f5af0;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #7f5af0;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* TEXT */
+
+.pricing-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #7f5af0;
+}
+
+.price span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* FEATURES */
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 30px;
+  padding: 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+
+.pricing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #7f5af0, #a855f7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-secondary {
+  border: 1px solid #555;
+  color: #fff;
+  padding: 9px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
