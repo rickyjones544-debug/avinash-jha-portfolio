@@ -1589,8 +1589,9 @@ header {
     max-width: 1200px;
     margin: 40px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
 }
 
 .p-card {
@@ -1639,10 +1640,11 @@ header {
     border-radius: 15px;
     border: 1px solid #333;
     transition: all 0.3s ease;
-    min-height: 400px;
+    min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    overflow: hidden;
 }
 
 .case-study-card:hover {
