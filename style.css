@@ -2475,6 +2475,8 @@ footer {
   
   text-align: center;
   transition: all 0.3s ease;
+  overflow: hidden;
+  min-height: auto;
 }
 
 .managed-care-card:hover {
