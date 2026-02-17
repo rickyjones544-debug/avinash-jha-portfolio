@@ -2244,143 +2244,163 @@ footer {
 
 /* PRICING SECTION */
 
-.pricing-section {
-  background: linear-gradient(135deg, #050505, #0f0c29);
-  padding: 80px 20px;
-  color: #fff;
+#pricing {
+  width: 100%;
+  padding: 80px 15px;
+  background: #05050a;
 }
 
+/* Container */
 .pricing-container {
   max-width: 1200px;
   margin: auto;
-  text-align: center;
 }
 
-.pricing-title {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.pricing-subtitle {
-  color: #aaa;
-  margin-bottom: 50px;
-}
-
-/* GRID */
-
+/* Grid */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 32px;
+  width: 100%;
 }
 
-/* CARD */
-
+/* Card */
 .pricing-card {
-  background: #111;
-  border-radius: 16px;
-  padding: 35px 25px;
-  box-shadow: 0 0 20px rgba(128, 90, 213, 0.2);
-  position: relative;
+  background: linear-gradient(180deg, #0c0c17, #05050a);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+
+  padding: 42px 32px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
   transition: all 0.3s ease;
 }
 
 .pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 35px rgba(128, 90, 213, 0.6);
+  transform: translateY(-6px);
+  border-color: #7f5af0;
 }
 
-/* POPULAR */
-
-.pricing-card.popular {
-  border: 2px solid #7f5af0;
-}
-
-.badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: #7f5af0;
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-/* TEXT */
-
+/* Title */
 .pricing-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-.price {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 25px;
+/* Price */
+.price-box {
+  background: rgba(127,90,240,0.12);
+  border: 1px solid rgba(127,90,240,0.45);
+  border-radius: 14px;
+
+  padding: 20px 10px;
+  margin-bottom: 30px;
+
+  font-size: 34px;
+  font-weight: 700;
   color: #7f5af0;
 }
 
-.price span {
-  font-size: 14px;
-  color: #aaa;
-}
-
-/* FEATURES */
-
-.pricing-card ul {
+/* Features */
+.pricing-features {
   list-style: none;
-  margin-bottom: 30px;
   padding: 0;
+  margin: 0 0 35px;
+
   text-align: left;
 }
 
-.pricing-card ul li {
-  margin: 10px 0;
-  font-size: 14px;
+.pricing-features li {
+  margin: 12px 0;
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.6;
 }
 
-/* BUTTONS */
-
-.pricing-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Tick */
+.pricing-features li::before {
+  content: "✓";
+  color: #7f5af0;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-.btn-primary {
-  background: linear-gradient(45deg, #7f5af0, #a855f7);
+/* Button container */
+.pricing-btn {
+  margin-top: auto;
+}
+
+/* Button */
+.pricing-btn a {
+  display: block;
+  padding: 15px;
+  background: #7f5af0;
   color: #fff;
-  padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  text-align: center;
+  font-size: 15px;
+
+  transition: 0.3s;
 }
 
-.btn-secondary {
-  border: 1px solid #555;
-  color: #fff;
-  padding: 9px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-  text-align: center;
+.pricing-btn a:hover {
+  background: #6846e5;
 }
 
-.btn-primary:hover,
-.btn-secondary:hover {
-  opacity: 0.85;
-}
-
-/* MOBILE RESPONSIVE */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-card {
+    padding: 38px 28px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  #pricing {
+    padding: 60px 12px;
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
+
   .pricing-card {
-    min-height: auto;
-    padding: 35px 25px;
+    padding: 32px 22px;
+  }
+
+  .pricing-card h3 {
+    font-size: 22px;
+  }
+
+  .price-box {
+    font-size: 28px;
+    padding: 16px 8px;
+  }
+
+  .pricing-features li {
+    font-size: 14px;
+  }
+
+  .pricing-btn a {
+    padding: 14px;
+    font-size: 14px;
   }
 }
