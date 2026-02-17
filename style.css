@@ -1649,18 +1649,15 @@ header {
 .project-image-container {
     position: relative;
     width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
+    height: auto;
+    margin-bottom: 0;
 }
 
 .project-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
 }
 
 .image-overlay {
