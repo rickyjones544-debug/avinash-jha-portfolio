@@ -2436,3 +2436,215 @@ footer {
     font-size: 14px;
   }
 }
+
+/* ================================
+   MANAGED WEBSITE CARE SECTION
+================================ */
+
+#managed-care {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0a0a0f, #05050a);
+  box-sizing: border-box;
+}
+
+/* Container - Full Width */
+.managed-care-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Card - Premium Design */
+.managed-care-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  box-sizing: border-box;
+  
+  background: linear-gradient(180deg, #1a1a2e, #0f0f1e);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(127, 90, 240, 0.2), 
+              0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.managed-care-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 50px rgba(127, 90, 240, 0.3), 
+              0 15px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(127, 90, 240, 0.5);
+}
+
+/* Title */
+.managed-care-card h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Price */
+.managed-care-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: #7f5af0;
+  margin-bottom: 15px;
+  background: rgba(127, 90, 240, 0.1);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  border-radius: 12px;
+  padding: 15px 25px;
+  display: inline-block;
+}
+
+/* Tagline */
+.managed-care-tagline {
+  font-size: 18px;
+  color: #a8a8b8;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Description */
+.managed-care-description {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Features Grid */
+.managed-care-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.feature-item {
+  font-size: 15px;
+  color: #ccc;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #7f5af0;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(127, 90, 240, 0.1);
+  transform: translateX(5px);
+}
+
+/* Footer Text */
+.managed-care-footer {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* Button */
+.managed-care-btn {
+  margin-top: 20px;
+}
+
+.managed-care-btn a {
+  display: inline-block;
+  padding: 18px 40px;
+  background: linear-gradient(45deg, #7f5af0, #a855f7);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(127, 90, 240, 0.3);
+}
+
+.managed-care-btn a:hover {
+  background: linear-gradient(45deg, #6846e5, #9333ea);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(127, 90, 240, 0.4);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  #managed-care {
+    padding: 60px 15px;
+  }
+  
+  .managed-care-card {
+    padding: 40px 30px;
+  }
+  
+  .managed-care-card h2 {
+    font-size: 28px;
+  }
+  
+  .managed-care-price {
+    font-size: 32px;
+    padding: 12px 20px;
+  }
+  
+  .managed-care-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  #managed-care {
+    padding: 40px 12px;
+  }
+  
+  .managed-care-card {
+    padding: 30px 20px;
+  }
+  
+  .managed-care-card h2 {
+    font-size: 24px;
+  }
+  
+  .managed-care-price {
+    font-size: 28px;
+    padding: 10px 15px;
+  }
+  
+  .managed-care-tagline {
+    font-size: 16px;
+  }
+  
+  .managed-care-description {
+    font-size: 14px;
+  }
+  
+  .feature-item {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  .managed-care-btn a {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+}
