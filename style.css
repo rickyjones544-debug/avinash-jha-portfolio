@@ -2245,37 +2245,52 @@ footer {
 /* PRICING SECTION */
 
 #pricing {
-  width: 100%;
-  padding: 80px 15px;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 80px 20px;
   background: #05050a;
+  box-sizing: border-box;
 }
 
-/* Container */
+/* Container - Full Width */
 .pricing-container {
-  max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Grid */
+/* Grid - Full Width Coverage */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
   width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  /* Desktop: 3 columns full width */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* Card */
+/* Cards - Stretch Full Space */
 .pricing-card {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  
   background: linear-gradient(180deg, #0c0c17, #05050a);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 18px;
-
-  padding: 42px 32px;
-  text-align: center;
-
+  
   display: flex;
   flex-direction: column;
-
+  
   transition: all 0.3s ease;
 }
 
@@ -2296,10 +2311,10 @@ footer {
   background: rgba(127,90,240,0.12);
   border: 1px solid rgba(127,90,240,0.45);
   border-radius: 14px;
-
+  
   padding: 20px 10px;
   margin-bottom: 30px;
-
+  
   font-size: 34px;
   font-weight: 700;
   color: #7f5af0;
@@ -2310,7 +2325,6 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0 0 35px;
-
   text-align: left;
 }
 
@@ -2344,7 +2358,6 @@ footer {
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
-
   transition: 0.3s;
 }
 
@@ -2352,53 +2365,72 @@ footer {
   background: #6846e5;
 }
 
+/* Popular Badge */
+.pricing-card.popular {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #7f5af0;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
 /* =========================
-   TABLET
+   TABLET (2 columns)
 ========================= */
 
 @media (max-width: 900px) {
-
+  #pricing {
+    padding: 60px 15px;
+  }
+  
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
-
+  
   .pricing-card {
-    padding: 38px 28px;
+    padding: 35px 25px;
   }
 }
 
 /* =========================
-   MOBILE
+   MOBILE (1 column)
 ========================= */
 
 @media (max-width: 600px) {
-
   #pricing {
-    padding: 60px 12px;
+    padding: 40px 10px;
   }
-
+  
   .pricing-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 12px;
   }
-
+  
   .pricing-card {
-    padding: 32px 22px;
+    padding: 30px 20px;
   }
-
+  
   .pricing-card h3 {
     font-size: 22px;
   }
-
+  
   .price-box {
     font-size: 28px;
     padding: 16px 8px;
   }
-
+  
   .pricing-features li {
     font-size: 14px;
   }
-
+  
   .pricing-btn a {
     padding: 14px;
     font-size: 14px;
