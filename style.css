@@ -2708,3 +2708,19 @@ footer {
     font-size: 14px;
   }
 }
+
+/* ===================================
+   CASE STUDIES FORCE RESET
+================================ */
+
+.case-studies,
+#case-studies,
+section[id="case-studies"] {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+  position: relative !important;
+}
