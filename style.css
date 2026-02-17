@@ -2789,8 +2789,68 @@ section#projects h2,
 section#projects p,
 section#projects .case-study-card,
 section#projects .project-image-container,
-section#projects .project-image {
+section#projects .project-image,
+section#projects .project-actions,
+section#projects .btn-link {
   visibility: visible !important;
   opacity: 1 !important;
   display: block !important;
+}
+
+/* PROJECT ACTIONS AND BUTTONS */
+.project-actions {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.btn-link {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 10 !important;
+  color: inherit !important;
+  background: white !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-link:hover {
+  visibility: visible !important;
+  opacity: 0.8 !important;
+  background: #f0f0f0 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2) !important;
+}
+
+/* FORCE ALL PROJECT CONTENT VISIBLE */
+.projects * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.case-study-card * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.project-image-container * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* REMOVE ANY OVERLAYS OR HIDING ELEMENTS */
+.projects::before,
+.projects::after,
+.case-study-card::before,
+.case-study-card::after,
+.project-image-container::before,
+.project-image-container::after {
+  display: none !important;
 }
