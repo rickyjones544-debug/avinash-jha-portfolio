@@ -789,10 +789,6 @@ header {
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: flex;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
     }
     
     .nav ul {
@@ -824,7 +820,6 @@ header {
         display: block;
         width: 100%;
         padding: 15px;
-        text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
