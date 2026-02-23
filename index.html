@@ -1451,15 +1451,32 @@ const translations = {
 // Update navigation
 function updateNavigation(lang) {
     const navTranslations = translations[lang].nav;
-    const navLinks = document.querySelectorAll('#navMenu a');
     
-    const navKeys = ['home', 'services', 'about', 'skills', 'experience', 'projects', 'why_me', 'pricing', 'faqs', 'contact'];
+    // Update main navigation links
+    const mainNavLinks = document.querySelectorAll('.main-nav .nav-link');
+    const mainNavKeys = ['home', 'services', 'about', 'projects', 'pricing', 'faqs'];
     
-    navLinks.forEach((link, index) => {
-        if (navKeys[index] && navTranslations[navKeys[index]]) {
-            link.textContent = navTranslations[navKeys[index]];
+    mainNavLinks.forEach((link, index) => {
+        if (mainNavKeys[index] && navTranslations[mainNavKeys[index]]) {
+            link.textContent = navTranslations[mainNavKeys[index]];
         }
     });
+    
+    // Update dropdown links
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu .dropdown-link');
+    const dropdownKeys = ['about', 'skills', 'experience', 'why_me'];
+    
+    dropdownLinks.forEach((link, index) => {
+        if (dropdownKeys[index] && navTranslations[dropdownKeys[index]]) {
+            link.textContent = navTranslations[dropdownKeys[index]];
+        }
+    });
+    
+    // Update contact button
+    const contactBtn = document.querySelector('.contact-btn');
+    if (contactBtn && navTranslations.contact) {
+        contactBtn.textContent = navTranslations.contact;
+    }
 }
 
 // Update hero section
