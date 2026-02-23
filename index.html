@@ -153,19 +153,11 @@
 
 <body>
 
-    <!-- Language Selector -->
+    <!-- Simple English Only Button -->
     <div class="language-selector">
-        <select id="languageSelect" onchange="changeLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="hi">हिंदी</option>
-            <option value="ne">नेपाली</option>
-            <option value="bn">বাংলা</option>
-            <option value="zh">中文</option>
-            <option value="ar">العربية</option>
-            <option value="ru">Русский</option>
-        </select>
+        <button class="english-only-btn" onclick="setEnglishOnly()">
+            🌐 English Only
+        </button>
     </div>
 
     <!-- NAVBAR -->
@@ -1607,11 +1599,14 @@ function initializeLanguage() {
     changeLanguage(detectedLang);
 }
 
+// Set English Only function
+function setEnglishOnly() {
+    // Keep everything in English - no changes needed
+    console.log('Website set to English only mode');
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize language after a short delay to ensure all elements are loaded
-    setTimeout(initializeLanguage, 100);
-    
     // Initialize dropdown menus
     initDropdowns();
 });
