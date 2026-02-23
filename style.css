@@ -2412,6 +2412,19 @@ footer {
   color: #fff;
 }
 
+/* Value Line */
+.value-line {
+  font-size: 16px;
+  color: #a8a8b8;
+  margin-bottom: 15px;
+  text-align: center;
+  font-style: italic;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #7f5af0;
+}
+
 /* Price */
 .price-box {
   background: rgba(127,90,240,0.12);
