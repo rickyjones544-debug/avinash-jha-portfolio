@@ -2398,6 +2398,21 @@ footer {
   font-weight: bold;
 }
 
+/* Tax Note */
+.pricing-tax-note {
+  text-align: center;
+  margin: 30px auto 0;
+  max-width: 600px;
+}
+
+.pricing-tax-note p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
 /* Button container */
 .pricing-btn {
   margin-top: auto;
