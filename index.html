@@ -648,7 +648,7 @@
                 <!-- BASIC -->
                 <div class="pricing-card">
                     <h3>Launch</h3>
-                    <div class="price-box">✅ ₹7,999 (One-Time)</div>
+                    <div class="price-box" id="launch-price">✅ ₹7,999 (One-Time)</div>
 
                     <ul class="pricing-features">
                         <li>3–5 Page Website</li>
@@ -668,7 +668,7 @@
                     <span class="badge">Popular</span>
 
                     <h3>Scale</h3>
-                    <div class="price-box">✅ ₹14,999 (One-Time)</div>
+                    <div class="price-box" id="scale-price">✅ ₹14,999 (One-Time)</div>
 
                     <ul class="pricing-features">
                         <li>Up to 10 Pages</li>
@@ -686,7 +686,7 @@
                 <!-- ENTERPRISE -->
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
-                    <div class="price-box">✅ Custom Quote</div>
+                    <div class="price-box" id="enterprise-price">✅ Custom Quote</div>
 
                     <ul class="pricing-features">
                         <li>Custom Web App</li>
@@ -710,7 +710,7 @@
         <div class="managed-care-container">
             <div class="managed-care-card">
                 <h2>🔧 Managed Website Care</h2>
-                <div class="managed-care-price">₹999 / month</div>
+                <div class="managed-care-price" id="managed-care-price">₹999 / month</div>
                 <p class="managed-care-tagline">Peace of Mind for Your Business</p>
                 
                 <p class="managed-care-description">
@@ -867,9 +867,76 @@ function toggleMobileMenu() {
     }
 }
 
-// Initialize
+// Country Detection and Dynamic Pricing Update
+async function detectCountryAndUpdatePricing() {
+    try {
+        // Get user's country using a free IP geolocation API
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        const country = data.country_code;
+        
+        console.log('Detected country:', country);
+        
+        // Pricing data
+        const pricing = {
+            IN: {
+                launch: '✅ ₹7,999 (One-Time)',
+                scale: '✅ ₹14,999 (One-Time)',
+                enterprise: '✅ Custom Quote',
+                managedCare: '₹999 / month'
+            },
+            default: {
+                launch: '✅ $399 (One-Time)',
+                scale: '✅ $799 (One-Time)',
+                enterprise: '✅ Custom Quote',
+                managedCare: '$99 / month'
+            }
+        };
+        
+        // Get pricing for detected country or default
+        const currentPricing = pricing[country] || pricing.default;
+        
+        // Update pricing elements
+        const launchPrice = document.getElementById('launch-price');
+        const scalePrice = document.getElementById('scale-price');
+        const enterprisePrice = document.getElementById('enterprise-price');
+        const managedCarePrice = document.getElementById('managed-care-price');
+        
+        if (launchPrice) launchPrice.textContent = currentPricing.launch;
+        if (scalePrice) scalePrice.textContent = currentPricing.scale;
+        if (enterprisePrice) enterprisePrice.textContent = currentPricing.enterprise;
+        if (managedCarePrice) managedCarePrice.textContent = currentPricing.managedCare;
+        
+        console.log('Pricing updated for country:', country, currentPricing);
+        
+    } catch (error) {
+        console.log('Error detecting country, using default pricing:', error);
+        // Fallback to USD pricing if detection fails
+        const defaultPricing = {
+            launch: '✅ $399 (One-Time)',
+            scale: '✅ $799 (One-Time)',
+            enterprise: '✅ Custom Quote',
+            managedCare: '$99 / month'
+        };
+        
+        const launchPrice = document.getElementById('launch-price');
+        const scalePrice = document.getElementById('scale-price');
+        const enterprisePrice = document.getElementById('enterprise-price');
+        const managedCarePrice = document.getElementById('managed-care-price');
+        
+        if (launchPrice) launchPrice.textContent = defaultPricing.launch;
+        if (scalePrice) scalePrice.textContent = defaultPricing.scale;
+        if (enterprisePrice) enterprisePrice.textContent = defaultPricing.enterprise;
+        if (managedCarePrice) managedCarePrice.textContent = defaultPricing.managedCare;
+    }
+}
+
+// Initialize pricing on page load
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing...');
+    
+    // Detect country and update pricing
+    detectCountryAndUpdatePricing();
     
     // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileMenuToggle');
