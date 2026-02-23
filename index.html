@@ -177,18 +177,29 @@
                 <span></span>
                 <span></span>
             </div>
-            <ul id="navMenu">
+            
+            <!-- Main Navigation -->
+            <ul id="navMenu" class="main-nav">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="nav-link dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about" class="dropdown-link">About Me</a></li>
+                        <li><a href="#skills" class="dropdown-link">Skills</a></li>
+                        <li><a href="#experience" class="dropdown-link">Experience</a></li>
+                        <li><a href="#why-me" class="dropdown-link">Why Me</a></li>
+                    </ul>
+                </li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#why-me" class="nav-link">Why Me</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#faq" class="nav-link">FAQs</a></li>
-                <li><a href="#contact" class="btn nav-link">Contact</a></li>
             </ul>
+            
+            <!-- Contact CTA Button -->
+            <div class="nav-cta">
+                <a href="#contact" class="btn-primary contact-btn">Contact Me</a>
+            </div>
         </div>
     </header>
 
@@ -976,7 +987,61 @@ function toggleMobileMenu() {
     }
 }
 
-// Country Detection and Dynamic Pricing Update
+// Dropdown menu functionality
+function initDropdowns() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close other dropdowns
+            dropdownToggles.forEach(otherToggle => {
+                if (otherToggle !== toggle) {
+                    const otherMenu = otherToggle.nextElementSibling;
+                    if (otherMenu && otherMenu.classList.contains('dropdown-menu')) {
+                        otherMenu.style.opacity = '0';
+                        otherMenu.style.visibility = 'hidden';
+                        otherMenu.style.transform = 'translateY(-10px)';
+                    }
+                }
+            });
+            
+            // Toggle current dropdown
+            const dropdownMenu = toggle.nextElementSibling;
+            if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                const isVisible = dropdownMenu.style.opacity === '1';
+                
+                if (isVisible) {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.transform = 'translateY(-10px)';
+                } else {
+                    dropdownMenu.style.opacity = '1';
+                    dropdownMenu.style.visibility = 'visible';
+                    dropdownMenu.style.transform = 'translateY(0)';
+                }
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdownToggles.forEach(toggle => {
+                const dropdownMenu = toggle.nextElementSibling;
+                if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.transform = 'translateY(-10px)';
+                }
+            });
+        }
+    });
+}
+
+// Detect country and update pricing
 async function detectCountryAndUpdatePricing() {
     try {
         // Get user's country using a free IP geolocation API
@@ -1529,6 +1594,9 @@ function initializeLanguage() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize language after a short delay to ensure all elements are loaded
     setTimeout(initializeLanguage, 100);
+    
+    // Initialize dropdown menus
+    initDropdowns();
 });
 </script>
 
