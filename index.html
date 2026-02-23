@@ -153,6 +153,21 @@
 
 <body>
 
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिंदी</option>
+            <option value="ne">नेपाली</option>
+            <option value="bn">বাংলা</option>
+            <option value="zh">中文</option>
+            <option value="ar">العربية</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+
     <!-- NAVBAR -->
     <header>
         <div class="nav">
@@ -1074,6 +1089,375 @@ window.addEventListener('resize', function() {
         navMenu.style.display = '';
         mobileToggle.classList.remove('active');
     }
+});
+
+// Multilingual Support
+const translations = {
+    en: {
+        nav: {
+            home: "Home",
+            services: "Services", 
+            about: "About",
+            skills: "Skills",
+            experience: "Experience",
+            projects: "Projects",
+            why_me: "Why Me",
+            pricing: "Pricing",
+            faqs: "FAQs",
+            contact: "Contact"
+        },
+        hero: {
+            title: "Helping Startups and Small Businesses Grow with Affordable Web & Mobile Apps",
+            description: "Coming from a small city in Bihar, I understand the struggles small businesses face when trying to access modern technology. I've seen shop owners, startups, and entrepreneurs wanting professional websites and apps but being unable to afford high development costs. That's why I provide affordable websites and apps with flexible installment payments - so you can grow first and pay comfortably later.",
+            view_projects: "View Projects",
+            download_resume: "Download Resume", 
+            hire_me: "Hire Me"
+        },
+        services: {
+            title: "Our Services",
+            subtitle: "Professional solutions tailored for your business growth",
+            web_dev: "Website Development",
+            web_dev_desc: "Modern, fast, responsive websites that convert visitors into customers and drive business growth.",
+            web_app: "Web Applications", 
+            web_app_desc: "Custom business applications tailored to your specific needs with scalable architecture and seamless user experience.",
+            mobile: "Mobile Apps",
+            mobile_desc: "Android & iOS solutions to reach customers on any device with native performance and intuitive interfaces.",
+            marketing: "Digital Marketing & SEO",
+            marketing_desc: "Rank higher and get more customers through targeted strategies, content marketing, and conversion optimization."
+        },
+        pricing: {
+            title: "Pricing Plans",
+            launch: "Launch",
+            scale: "Scale", 
+            enterprise: "Enterprise",
+            launch_value: "Perfect for individuals and small projects",
+            scale_value: "Ideal for growing businesses and teams",
+            enterprise_value: "Tailored solutions for advanced business requirements",
+            custom_quote: "Custom Quote",
+            get_started: "Get Started",
+            explore: "Explore",
+            tax_note: "*All prices are exclusive of taxes"
+        }
+    },
+    es: {
+        nav: {
+            home: "Inicio",
+            services: "Servicios",
+            about: "Acerca de", 
+            skills: "Habilidades",
+            experience: "Experiencia",
+            projects: "Proyectos",
+            why_me: "Por Qué Yo",
+            pricing: "Precios",
+            faqs: "Preguntas Frecuentes",
+            contact: "Contacto"
+        },
+        hero: {
+            title: "Ayudando a Startups y Pequeñas Empresas a Crecer con Aplicaciones Web y Móviles Asequibles",
+            description: "Viniendo de una pequeña ciudad en Bihar, entiendo las luchas que enfrentan las pequeñas empresas cuando intentan acceder a la tecnología moderna. He visto dueños de tiendas, startups y emprendedores que quieren sitios web y aplicaciones profesionales pero no pueden pagar los altos costos de desarrollo. Por eso proporciono sitios web y aplicaciones asequibles con pagos de cuotas flexibles, para que puedas crecer primero y pagar cómodamente después.",
+            view_projects: "Ver Proyectos",
+            download_resume: "Descargar CV",
+            hire_me: "Contrátame"
+        },
+        services: {
+            title: "Nuestros Servicios",
+            subtitle: "Soluciones profesionales adaptadas para el crecimiento de su negocio",
+            web_dev: "Desarrollo Web",
+            web_dev_desc: "Sitios web modernos, rápidos y responsivos que convierten visitantes en clientes e impulsan el crecimiento empresarial.",
+            web_app: "Aplicaciones Web",
+            web_app_desc: "Aplicaciones comerciales personalizadas adaptadas a sus necesidades específicas con arquitectura escalable y experiencia de usuario perfecta.",
+            mobile: "Aplicaciones Móviles", 
+            mobile_desc: "Soluciones para Android e iOS para llegar a clientes en cualquier dispositivo con rendimiento nativo e interfaces intuitivas.",
+            marketing: "Marketing Digital y SEO",
+            marketing_desc: "Clasifique más alto y obtenga más clientes a través de estrategias específicas, marketing de contenido y optimización de conversión."
+        },
+        pricing: {
+            title: "Planes de Precios",
+            launch: "Lanzamiento",
+            scale: "Escala",
+            enterprise: "Empresarial", 
+            launch_value: "Perfecto para individuos y pequeños proyectos",
+            scale_value: "Ideal para empresas en crecimiento y equipos",
+            enterprise_value: "Soluciones a medida para requisitos comerciales avanzados",
+            custom_quote: "Cotización Personalizada",
+            get_started: "Comenzar",
+            explore: "Explorar",
+            tax_note: "*Todos los precios son exclusivos de impuestos"
+        }
+    },
+    fr: {
+        nav: {
+            home: "Accueil",
+            services: "Services",
+            about: "À Propos",
+            skills: "Compétences", 
+            experience: "Expérience",
+            projects: "Projets",
+            why_me: "Pour Moi",
+            pricing: "Tarifs",
+            faqs: "FAQ",
+            contact: "Contact"
+        },
+        hero: {
+            title: "Aider les Startups et Petites Entreprises à Croître avec des Applications Web et Mobiles Abordables",
+            description: "Venant d'une petite ville au Bihar, je comprends les difficultés que rencontrent les petites entreprises lorsqu'elles essaient d'accéder à la technologie moderne. J'ai vu des propriétaires de boutique, des startups et des entrepreneurs vouloir des sites web et applications professionnels mais ne pouvant pas se permettre les coûts de développement élevés. C'est pourquoi je fournis des sites web et applications abordables avec des paiements de mensualités flexibles - afin que vous puissiez d'abord grandir et payer confortablement plus tard.",
+            view_projects: "Voir les Projets",
+            download_resume: "Télécharger CV",
+            hire_me: "M'Embaucher"
+        },
+        services: {
+            title: "Nos Services",
+            subtitle: "Solutions professionnelles adaptées à la croissance de votre entreprise",
+            web_dev: "Développement Web",
+            web_dev_desc: "Sites web modernes, rapides et responsifs qui convertissent les visiteurs en clients et stimulent la croissance commerciale.",
+            web_app: "Applications Web",
+            web_app_desc: "Applications commerciales personnalisées adaptées à vos besoins spécifiques avec une architecture évolutive et une expérience utilisateur transparente.",
+            mobile: "Applications Mobiles",
+            mobile_desc: "Solutions Android et iOS pour atteindre les clients sur n'importe quel appareil avec des performances natives et des interfaces intuitives.",
+            marketing: "Marketing Digital et SEO",
+            marketing_desc: "Classez-vous plus haut et obtenez plus de clients grâce à des stratégies ciblées, au marketing de contenu et à l'optimisation de la conversion."
+        },
+        pricing: {
+            title: "Plans Tarifaires",
+            launch: "Lancement",
+            scale: "Échelle",
+            enterprise: "Entreprise",
+            launch_value: "Parfait pour les individus et petits projets", 
+            scale_value: "Idéal pour les entreprises en croissance et les équipes",
+            enterprise_value: "Solutions sur mesure pour les besoins commerciaux avancés",
+            custom_quote: "Devis Personnalisé",
+            get_started: "Commencer",
+            explore: "Explorer",
+            tax_note: "*Tous les prix sont exclusifs de taxes"
+        }
+    },
+    hi: {
+        nav: {
+            home: "होम",
+            services: "सेवाएं",
+            about: "के बारे में",
+            skills: "कौशल",
+            experience: "अनुभव",
+            projects: "परियोजनाएं", 
+            why_me: "मैं क्यों",
+            pricing: "मूल्य निर्धारण",
+            faqs: "सामान्य प्रश्न",
+            contact: "संपर्क"
+        },
+        hero: {
+            title: "किफायती वेब और मोबाइल ऐप के साथ स्टार्टअप और छोटे व्यवसायों को बढ़ने में मदद करना",
+            description: "बिहार के एक छोटे शहर से आने के नाते, मैं समझता हूं कि छोटे व्यवसायों को आधुनिक तकनीक तक पहुंचने में क्या कठिनाइयां आती हैं। मैंने दुकान मालिकों, स्टार्टअप और उद्यमियों को पेशेवर वेबसाइट और ऐप चाहते हुए देखा है लेकिन उच्च विकास लागत वहन नहीं कर सके। इसीलिए मैं लचीले किश्त भुगतान के साथ किफायती वेबसाइट और ऐप प्रदान करता हूं - ताकि आप पहले बढ़ सकें और बाद में आराम से भुगतान कर सकें।",
+            view_projects: "परियोजनाएं देखें",
+            download_resume: "रिज्यूमे डाउनलोड करें",
+            hire_me: "मुझे नियुक्त करें"
+        },
+        services: {
+            title: "हमारी सेवाएं",
+            subtitle: "आपके व्यवसाय विकास के लिए अनुकूलित पेशेवर समाधान",
+            web_dev: "वेबसाइट विकास",
+            web_dev_desc: "आधुनिक, तेज, रिस्पॉन्सिव वेबसाइटें जो आगंतुकों को ग्राहकों में बदलती हैं और व्यवसाय विकास को बढ़ावा देती हैं।",
+            web_app: "वेब एप्लिकेशन",
+            web_app_desc: "आपकी विशिष्ट आवश्यकताओं के अनुसार अनुकूलित व्यावसायिक एप्लिकेशन जो स्केलेबल आर्किटेक्चर और निर्बाध उपयोगकर्ता अनुभव के साथ हैं।",
+            mobile: "मोबाइल ऐप",
+            mobile_desc: "किसी भी डिवाइस पर ग्राहकों तक पहुंचने के लिए Android और iOS समाधान जो देशी प्रदर्शन और सहज इंटरफेस के साथ हैं।",
+            marketing: "डिजिटल मार्केटिंग और SEO",
+            marketing_desc: "लक्षित रणनीतियों, कंटेंट मार्केटिंग और कन्वर्जन ऑप्टिमाइज़ेशन के माध्यम से उच्च रैंकिंग और अधिक ग्राहक प्राप्त करें।"
+        },
+        pricing: {
+            title: "मूल्य निर्धारण योजनाएं",
+            launch: "लॉन्च",
+            scale: "स्केल",
+            enterprise: "एंटरप्राइज",
+            launch_value: "व्यक्तियों और छोटी परियोजनाओं के लिए उत्तम",
+            scale_value: "बढ़ते व्यवसायों और टीमों के लिए आदर्श",
+            enterprise_value: "उन्नत व्यावसायिक आवश्यकताओं के लिए अनुकूल समाधान",
+            custom_quote: "कस्टम कोट",
+            get_started: "शुरू करें",
+            explore: "एक्सप्लोर करें",
+            tax_note: "*सभी कीमतें करों को छोड़कर हैं"
+        }
+    }
+};
+
+// Detect browser language
+function detectBrowserLanguage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    const langCode = browserLang.split('-')[0]; // Get primary language code
+    return translations[langCode] ? langCode : 'en'; // Fallback to English
+}
+
+// Change language function
+function changeLanguage(lang) {
+    if (!translations[lang]) {
+        console.warn('Language not supported:', lang);
+        return;
+    }
+    
+    // Update navigation
+    updateNavigation(lang);
+    
+    // Update hero section
+    updateHeroSection(lang);
+    
+    // Update services section
+    updateServicesSection(lang);
+    
+    // Update pricing section
+    updatePricingSection(lang);
+    
+    // Save language preference
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Update language selector
+    document.getElementById('languageSelect').value = lang;
+}
+
+// Update navigation
+function updateNavigation(lang) {
+    const navTranslations = translations[lang].nav;
+    const navLinks = document.querySelectorAll('#navMenu a');
+    
+    const navKeys = ['home', 'services', 'about', 'skills', 'experience', 'projects', 'why_me', 'pricing', 'faqs', 'contact'];
+    
+    navLinks.forEach((link, index) => {
+        if (navKeys[index] && navTranslations[navKeys[index]]) {
+            link.textContent = navTranslations[navKeys[index]];
+        }
+    });
+}
+
+// Update hero section
+function updateHeroSection(lang) {
+    const heroTranslations = translations[lang].hero;
+    
+    // Update hero title
+    const heroTitle = document.querySelector('.hero-left h1');
+    if (heroTitle && heroTranslations.title) {
+        heroTitle.textContent = heroTranslations.title;
+    }
+    
+    // Update hero description
+    const heroDesc = document.querySelector('.hero-left p');
+    if (heroDesc && heroTranslations.description) {
+        heroDesc.textContent = heroTranslations.description;
+    }
+    
+    // Update hero buttons
+    const heroBtns = document.querySelectorAll('.hero-btn a');
+    const btnKeys = ['view_projects', 'download_resume', 'hire_me'];
+    
+    heroBtns.forEach((btn, index) => {
+        if (btnKeys[index] && heroTranslations[btnKeys[index]]) {
+            // Keep the onclick and href attributes, just update text
+            const originalHref = btn.getAttribute('href');
+            const originalOnclick = btn.getAttribute('onclick');
+            btn.textContent = heroTranslations[btnKeys[index]];
+            if (originalHref) btn.setAttribute('href', originalHref);
+            if (originalOnclick) btn.setAttribute('onclick', originalOnclick);
+        }
+    });
+}
+
+// Update services section
+function updateServicesSection(lang) {
+    const servicesTranslations = translations[lang].services;
+    
+    // Update services title
+    const servicesTitle = document.querySelector('#services h2');
+    if (servicesTitle && servicesTranslations.title) {
+        servicesTitle.textContent = servicesTranslations.title;
+    }
+    
+    // Update services subtitle
+    const servicesSubtitle = document.querySelector('#services p');
+    if (servicesSubtitle && servicesTranslations.subtitle) {
+        servicesSubtitle.textContent = servicesTranslations.subtitle;
+    }
+    
+    // Update service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    const serviceKeys = ['web_dev', 'web_app', 'mobile', 'marketing'];
+    
+    serviceCards.forEach((card, index) => {
+        if (serviceKeys[index]) {
+            const key = serviceKeys[index];
+            const titleKey = key + '_title';
+            const descKey = key + '_desc';
+            
+            const title = card.querySelector('h3');
+            const desc = card.querySelector('p');
+            
+            if (title && servicesTranslations[key]) {
+                title.textContent = servicesTranslations[key];
+            }
+            if (desc && servicesTranslations[descKey]) {
+                desc.textContent = servicesTranslations[descKey];
+            }
+        }
+    });
+}
+
+// Update pricing section
+function updatePricingSection(lang) {
+    const pricingTranslations = translations[lang].pricing;
+    
+    // Update pricing title
+    const pricingTitle = document.querySelector('#pricing h2');
+    if (pricingTitle && pricingTranslations.title) {
+        pricingTitle.textContent = pricingTranslations.title;
+    }
+    
+    // Update pricing cards
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    const planKeys = ['launch', 'scale', 'enterprise'];
+    
+    pricingCards.forEach((card, index) => {
+        if (planKeys[index]) {
+            const key = planKeys[index];
+            
+            // Update plan title
+            const planTitle = card.querySelector('h3');
+            if (planTitle && pricingTranslations[key]) {
+                planTitle.textContent = pricingTranslations[key];
+            }
+            
+            // Update value line
+            const valueLine = card.querySelector('.value-line');
+            const valueKey = key + '_value';
+            if (valueLine && pricingTranslations[valueKey]) {
+                valueLine.textContent = pricingTranslations[valueKey];
+            }
+            
+            // Update button
+            const button = card.querySelector('.btn-primary, .btn-secondary');
+            const btnKey = key === 'enterprise' ? 'explore' : 'get_started';
+            if (button && pricingTranslations[btnKey]) {
+                button.textContent = pricingTranslations[btnKey];
+            }
+        }
+    });
+    
+    // Update tax note
+    const taxNote = document.querySelector('.pricing-tax-note p');
+    if (taxNote && pricingTranslations.tax_note) {
+        taxNote.textContent = pricingTranslations.tax_note;
+    }
+}
+
+// Initialize language on page load
+function initializeLanguage() {
+    // Get saved language or detect browser language
+    const savedLang = localStorage.getItem('selectedLanguage');
+    const detectedLang = savedLang || detectBrowserLanguage();
+    
+    // Set initial language
+    changeLanguage(detectedLang);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize language after a short delay to ensure all elements are loaded
+    setTimeout(initializeLanguage, 100);
 });
 </script>
 
