@@ -2678,6 +2678,25 @@ footer {
   font-weight: bold;
 }
 
+/* Pricing Trust Line */
+.pricing-trust-line {
+  text-align: center;
+  margin: 30px auto 0;
+  max-width: 600px;
+}
+
+.pricing-trust-line p {
+  font-size: 18px;
+  color: #28a745;
+  font-weight: 600;
+  margin: 0;
+  padding: 15px 20px;
+  background: rgba(40, 167, 69, 0.1);
+  border-radius: 8px;
+  border: 2px solid rgba(40, 167, 69, 0.2);
+  display: inline-block;
+}
+
 /* Tax Note */
 .pricing-tax-note {
   text-align: center;
