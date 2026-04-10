@@ -203,11 +203,51 @@ header {
     font-weight: 400;
 }
 
+.urgency-banner {
+    text-align: center;
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 152, 0, 0.1));
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.urgency-banner::before {
+    content: 'LIMITED TIME';
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    background: #ff6b35;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+}
+
+.urgency-banner p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+}
+
+.urgency-banner strong {
+    color: #ff6b35;
+    font-weight: 700;
+    font-size: 18px;
+}
+
 .hero-btn {
     display: flex;
     gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
     margin-top: 20px;
 }
 
