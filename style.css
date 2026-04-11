@@ -47,6 +47,24 @@ section p {
     margin-right: auto;
 }
 
+.trust-signal {
+    font-size: 16px;
+    font-weight: 500;
+    color: #7f5af0;
+    text-align: center;
+    margin: -20px auto 30px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.white .trust-signal {
+    color: #7f5af0;
+}
+
+.dark .trust-signal {
+    color: #a8a8b8;
+}
+
 /* SECTION SEPARATION */
 
 section::before {
